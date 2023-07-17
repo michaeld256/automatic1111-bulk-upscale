@@ -8,9 +8,15 @@ import time
 # CONSTANTS
 STABLE_DIFFUSION_URL = "http://127.0.0.1:7860"
 
+# Make sure folders exist
+if not os.path.isdir("./image_output"):
+	os.mkdir("./image_output")
+if not os.path.isdir("./image_input"):
+	os.mkdir("./image_input")
+os.mkdir(f"./image_output/{time.time()}")
+
 imageId = 1
 images = os.listdir("./image_input")
-os.mkdir(f"./image_output/{time.time()}")
 
 # Iterate over every file in image_input
 for inputImgName in images:
